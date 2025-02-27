@@ -1,0 +1,52 @@
+---
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/MarioVega25", icon: "🐙" },
+  { name: "Instagram", url: "https://instagram.com/mario_vega25", icon: "📸" },
+  { name: "Twitter", url: "https://twitter.com/Mario_Vega", icon: "🐦" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/MarioVega", icon: "💼" },
+];
+
+
+---
+
+<footer>
+    <p>© 2025 Mario Alejandro Vega García</p>
+    <ul>
+      {socialLinks.map((social) => (
+        <li>
+          <a href={social.url} target="_blank" rel="noopener noreferrer">
+            {social.icon} {social.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </footer>
+</footer>
+
+
+<style>
+    .footer {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .footer a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+  
+    .footer a:hover {
+      color: #f39c12;
+    }
+  </style>

@@ -1,4 +1,6 @@
 ---
+import "../style/global.css";
+import Navigation from "../components/Navigation.astro";
 const pagetitle = "Sobre mi";
 
 const identity = {
@@ -18,19 +20,18 @@ const skills = [
 ];
 const happy = true;
 const finished = false;
-const goal = 3;
+const goal = 1;
+const skillColor = "Brown"; // Define the color of the skills
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-
+    <Navigation />
     <title>{pagetitle}</title>
   </head>
-  <a href="/">Inicio</a>
-  <a href="/about/">Sobre mi</a>
-  <a href="/blog/">Blog</a>
 
   <h1>{pagetitle}</h1>
   <h2>¡y mi nuevo sitio Astro!</h2>
@@ -64,40 +65,53 @@ const goal = 3;
     </ul>
     <p>Mis habilidades son:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill"> {skill}</li>)}
     </ul>
     <p>
-        {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+      {happy && <p>¡Estoy feliz de aprender Astro!</p>}
 
-        {finished && <p>¡He terminado este tutorial!</p>}
-        
-        {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+      {finished && <p>¡He terminado este tutorial!</p>}
+
+      {
+        goal === 1 ? (
+          <p>Mi objetivo es terminar en 1 dia.</p>
+        ) : (
+          <p>Mi objetivo es terminar ya.</p>
+        )
+      }
+      <Footer />
+    </p>
   </body>
-</html>
-<style>
-  body {
-    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
-      Arial, sans-serif;
-  }
-    h1 {
-        font-size: 22px;
-        margin-top: 0.25em;
+  <style define:vars={{ skillColor }}>
+    body {
+      font-family:
+        Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+        sans-serif;
     }
+    h1 {
+      color: purple;
+      font-size: 4rem;
+      margin-top: 0.25em;
+    }
+    .skill {
+      color: var(--skillColor);
+      font-weight: bold;
+    }
+
     #links {
-        display: flex;
-        gap: 16px;
+      display: flex;
+      gap: 16px;
     }
     #links a {
-        display: flex;
-        align-items: center;
-        padding: 10px 12px;
-        color: #111827;
-        text-decoration: none;
-        transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      padding: 10px 12px;
+      color: #111827;
+      text-decoration: none;
+      transition: color 0.2s;
     }
     #links a:hover {
-        color: rgb(78, 80, 86);
+      color: rgb(78, 80, 86);
     }
-
-</style>
-
+  </style>
+</html>
