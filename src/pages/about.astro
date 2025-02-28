@@ -1,8 +1,6 @@
 ---
 import "../style/global.css";
-import Navigation from "../components/Navigation.astro";
-const pagetitle = "Sobre mi";
-
+const { pageTitle } = Astro.props;
 const identity = {
   firstName: "Mario",
   country: "Tampico",
@@ -10,7 +8,7 @@ const identity = {
   hobbies: ["fotografia", "observación de aves", "Juagr videojuegos"],
   favoriteFood: "Tacos de barbacoa",
 };
-
+import Layouts from "../layouts/Layouts.astro";
 const skills = [
   "MySQL",
   "C++",
@@ -22,20 +20,19 @@ const happy = true;
 const finished = false;
 const goal = 1;
 const skillColor = "Brown"; // Define the color of the skills
-import Footer from "../components/Footer.astro";
 ---
 
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <Navigation />
-    <title>{pagetitle}</title>
+    <title>{pageTitle}</title>
   </head>
-
-  <h1>{pagetitle}</h1>
-  <h2>¡y mi nuevo sitio Astro!</h2>
   <body>
+    <Layouts >
+      <h1>{pageTitle}</h1>
+    </Layouts>
+    <h2>¡y mi nuevo sitio Astro!</h2>
     <p>
       ¡Hola! Soy un Practicante y estoy aprendiendo Astro. ¡Estoy emocionado de
       ver cómo funciona!
@@ -79,42 +76,42 @@ import Footer from "../components/Footer.astro";
           <p>Mi objetivo es terminar ya.</p>
         )
       }
-      <Footer />
-      <script>
-        import "../scripts/menu.js";    
-        </script>
     </p>
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
-  <style define:vars={{ skillColor }}>
-    body {
-      font-family:
-        Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
-        sans-serif;
-    }
-    h1 {
-      color: purple;
-      font-size: 4rem;
-      margin-top: 0.25em;
-    }
-    .skill {
-      color: var(--skillColor);
-      font-weight: bold;
-    }
-
-    #links {
-      display: flex;
-      gap: 16px;
-    }
-    #links a {
-      display: flex;
-      align-items: center;
-      padding: 10px 12px;
-      color: #111827;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    #links a:hover {
-      color: rgb(78, 80, 86);
-    }
-  </style>
 </html>
+
+<style define:vars={{ skillColor }}>
+  body {
+    font-family:
+      Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+      sans-serif;
+  }
+  h1 {
+    color: purple;
+    font-size: 4rem;
+    margin-top: 0.25em;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: bold;
+  }
+
+  #links {
+    display: flex;
+    gap: 16px;
+  }
+  #links a {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    color: #111827;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  #links a:hover {
+    color: rgb(78, 80, 86);
+  }
+</style>

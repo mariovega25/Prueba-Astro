@@ -1,0 +1,23 @@
+---
+import Header from "../components/Headers.astro";
+import Footer from "../components/Footer.astro";
+import "../style/global.css";
+const pageTitle = "Astro Prueba";
+---
+
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Inicio</title>
+</head>
+<body>
+<Header />
+	<h1>{pageTitle}</h1>
+    <slot />
+    <Footer />
+<script>
+   import "../scripts/menu.js";
+  </script>
+</body>
+</html>
