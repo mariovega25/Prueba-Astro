@@ -1,8 +1,14 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
 html {
     background-color: #f1f5f9;
     font-family: sans-serif;
   }
-  
+  /*
   body {
     margin: 0 auto;
     width: 100%;
@@ -10,23 +16,20 @@ html {
     padding: 1rem;
     line-height: 1.5;
   }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  h1 {
+  */
+ 
+ /* h1 {
     margin: 1rem 0;
     font-size: 2.5rem;
     text-align: center;
   }
-/*estilos de WELCOME*/
+estilos de WELCOME
 .container {
   align-items: center;
   text-align: center;
 }
 
-/*Estilos de Hamburger*/
+Estilos de Hamburger
 
 .hamburger {
   padding-right: 20px;
@@ -41,7 +44,7 @@ html {
   background-color: #ff9776;
 }
 
-/* estilos de la barra de navegación*/
+ estilos de la barra de navegación
 .nav-links {
   width: 100%;
   top: 5rem;
@@ -88,5 +91,5 @@ html {
     display: none;
   }
 
-}
+}*/
 
