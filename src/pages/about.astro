@@ -31,14 +31,13 @@ const skillColor = "Brown"; // Define the color of the skills
   <body>
     <Layouts >
       <h1>{pageTitle}</h1>
-    </Layouts>
-    <h2>¡y mi nuevo sitio Astro!</h2>
-    <p>
-      ¡Hola! Soy un Practicante y estoy aprendiendo Astro. ¡Estoy emocionado de
-      ver cómo funciona!
-    </p>
-    <p>
-      Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda
+      <h2>¡y mi nuevo sitio Astro!</h2>
+      <p>
+        ¡Hola! Soy un Practicante y estoy aprendiendo Astro. ¡Estoy emocionado de
+        ver cómo funciona!
+      </p>
+      <p>
+        Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda
       página de mi sitio web, ¡y es la primera que he construido yo mismo!
     </p>
     <p>
@@ -66,9 +65,9 @@ const skillColor = "Brown"; // Define the color of the skills
     </ul>
     <p>
       {happy && <p>¡Estoy feliz de aprender Astro!</p>}
-
+      
       {finished && <p>¡He terminado este tutorial!</p>}
-
+      
       {
         goal === 1 ? (
           <p>Mi objetivo es terminar en 1 dia.</p>
@@ -77,6 +76,7 @@ const skillColor = "Brown"; // Define the color of the skills
         )
       }
     </p>
+    </Layouts>
     <script>
       import "../scripts/menu.js";
     </script>

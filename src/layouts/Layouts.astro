@@ -1,7 +1,7 @@
 ---
-import Header from "../components/Headers.astro";
-import Footer from "../components/Footer.astro";
 import "../style/global.css";
+import Footer from "./Footer.astro";
+import Headers from "./Headers.astro";
 const pageTitle = "Astro Prueba";
 ---
 
@@ -12,7 +12,7 @@ const pageTitle = "Astro Prueba";
 	<title>Inicio</title>
 </head>
 <body>
-<Header />
+<Headers />
 	<h1>{pageTitle}</h1>
     <slot />
     <Footer />
